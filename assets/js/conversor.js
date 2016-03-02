@@ -31,14 +31,22 @@
   function Farenheit(valor)
   {
     this.toCelcius = function(){
-      return (((this.value - 32) * 5)/9);
+      return ((this.value - 32) * 5/9);
     }
     this.toKelvin = function(){
-      return (((this.value + 459.67) * 5) / 9);
+      return ((this.value + 459.67) * 5/9);
     }
   }
 
-  
+  fucntion Kelvin(valor)
+  {
+    this.toCelcius = function(){
+      return (this.value - 237.15);
+    }
+    this.toFarenheit = function(){
+      return ((this.value * 9/5) - 459.67);
+    }
+  }
 
   exports.Temperatura = Temperatura;
   exports.Celsius = Celsius;
