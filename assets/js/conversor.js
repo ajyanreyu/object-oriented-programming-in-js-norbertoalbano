@@ -66,7 +66,8 @@
     var valor     = document.getElementById('convert').value,
         elemento  = document.getElementById('converted'),
         /* Extienda la RegeExp a la especificación. use una XRegExp */
-        regexp    = /^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([a-z,A-Z]+)\s*$/i;
+        regexp    = XRegExp('(?<valor> ([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?\s*) -?   #valor   \n' +
+                             '(?<tipo> ([a-z,A-Z]+)\s*$ -?  #tipo     \n )');     /^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([a-z,A-Z]+)\s*$/i
     valor     = valor.match(regexp);
 
     if (valor) {
