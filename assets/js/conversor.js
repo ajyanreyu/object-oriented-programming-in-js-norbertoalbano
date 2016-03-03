@@ -13,7 +13,7 @@
   function Temperatura(valor,tipo)
   {
     /* tipo es opcional. Debería admitir new Medida("45.2 F") */
-    Media.call(this, valor, tipo);
+    Medida.call(this, valor, tipo);
   }
 
   function Celsius(valor)
@@ -56,7 +56,7 @@
   Farenheit.prototype = new Temperatura();
   Farenheit.prototype.constructor = Farenheit;
   Kelvin.prototype = new Temperatura();
-  Kelvin.prototype.constructor = kelvin;
+  Kelvin.prototype.constructor = Kelvin;
 
   exports.Temperatura = Temperatura;
   exports.Celsius = Celsius;
