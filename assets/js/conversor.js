@@ -48,6 +48,16 @@
     }
   }
 
+  //definimos la herencia de las clases
+  Temperatura.prototype = new Medida();
+  Temperatura.prototype.contructor = Temperatura;
+  Celsius.prototype = new Temperatura();
+  Celsius.prototype.contructor = Celsius;
+  Farenheit.prototype = new Temperatura();
+  Farenheit.prototype.constructor = Farenheit;
+  Kelvin.prototype = new Temperatura();
+  Kelvin.prototype.constructor = kelvin;
+
   exports.Temperatura = Temperatura;
   exports.Celsius = Celsius;
   exports.Farenheit = Farenheit;
