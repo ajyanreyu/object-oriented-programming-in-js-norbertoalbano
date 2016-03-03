@@ -23,7 +23,7 @@
       return ((this.value * 9/5) + 32);
     }
     this.toKelvin = function(){
-      return (this.value + 273.15));
+      return (this.value + 273.15);
     }
   }
 
@@ -66,9 +66,11 @@
     var valor     = document.getElementById('convert').value,
         elemento  = document.getElementById('converted'),
         /* Extienda la RegeExp a la especificación. use una XRegExp */
-        regexp    = XRegExp('(?<valor> ([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?\s*) -?   #valor   \n' +
-                             '(?<tipo> ([a-z,A-Z]+)\s*$ -?  #tipo     \n )');     /^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([a-z,A-Z]+)\s*$/i
-    valor     = valor.match(regexp);
+        regexp    = XRegExp('(?<val> ([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?\s*) -?   #val  \n' +
+                            '(?<tipo1> ([a-z,A-Z]+)\s* ) -?    #tipo1     \n');
+                            //'(?<tipo2>  (([a-z,A-Z]+)\s*)) -?   #tipo2   \n');     /^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([a-z,A-Z]+)\s*$/i
+    valor     = XRegExp.exec('35.5f', regexp).val;
+    console.log(valor);
 
     if (valor) {
       var numero = valor[1],
@@ -92,6 +94,7 @@
           break;
 
         default:
+        converted.innerHTML = "ERROR! Intenta usar expresiones tipo '-2.7C' o '25.8K'"
           /* rellene este código */
       }
     }
