@@ -67,7 +67,7 @@
         elemento  = document.getElementById('converted'),
         /* Extienda la RegeExp a la especificación. use una XRegExp */
         regexp    = XRegExp('(?<val> ([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?\s*) -?   #val  \n' +
-                            '(?<tipo1> ([a-z,A-Z]+)\s* ) -?    #tipo1     \n');
+                            '(?<tipo1> ([a-z,A-Z]+)\s* ) -?    #tipo1     \n', 'x');
                             //'(?<tipo2>  (([a-z,A-Z]+)\s*)) -?   #tipo2   \n');     /^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([a-z,A-Z]+)\s*$/i
     valor     = XRegExp.exec('35.5f', regexp).val;
     console.log(valor);
