@@ -38,7 +38,7 @@
     }
   }
 
-  fucntion Kelvin(valor)
+  function Kelvin(valor)
   {
     this.toCelcius = function(){
       return (this.value - 237.15);
