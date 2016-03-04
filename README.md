@@ -10,6 +10,7 @@ Este repositorio aloja el codigo de la practica de conversion de temperatura con
 **Página de la práctica**
 
 * [Web](http://ajyanreyu.github.io/object-oriented-programming-in-js-norbertoalbano)
+* [Web](http://alu0100611519.github.io/object-oriented-programming-in-js-norbertoalbano)
 
 **Página del autor**
 
