@@ -66,20 +66,24 @@
     var valor     = document.getElementById('convert').value,
         elemento  = document.getElementById('converted'),
         /* Extienda la RegeExp a la especificación. use una XRegExp */
-        regexp    = XRegExp('(?<val> ([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?\s*) -?   #val  \n' +
-                            '(?<tipo1> ([a-z,A-Z]+)\s* ) -?    #tipo1     \n', 'x');
+        regexp    = XRegExp('(?<val> [-+]?\\d+(?:\.\\d+)?(?:e[+-]?\\d+)?\\s*) -?   #val  \n' +
+                            '(?<tipo1> ([cCfFkK])\\s* ) -?    #tipo1     \n' +
+                            '(?<tipo2> ([cCfFkK])\\s* ) -?    #tipo2     \n', 'x');
                             //'(?<tipo2>  (([a-z,A-Z]+)\s*)) -?   #tipo2   \n');     /^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([a-z,A-Z]+)\s*$/i
-    valor     = XRegExp.exec('35.5f', regexp).val;
-    console.log(valor);
-
+    var val     = XRegExp.exec(valor , regexp );
+    console.log(val.val);
+    console.log(val.tipo1);
+    console.log(val.tipo2);
     if (valor) {
-      var numero = valor[1],
-          tipo   = valor[2].toLowerCase();
+      var numero = val.val,
+          tipo1  = val.tipo1;
+     var  tipo2  = val.tipo2;
+
 
       numero = parseFloat(numero);
-      console.log("Valor: " + numero + ", Tipo: " + tipo);
+      console.log("Valor: " + numero + ", Tipo: " + tipo1 , "Tipo2: " + tipo2);
 
-      switch (tipo) {
+      switch (tipo1) {
         case 'c':
           var celsius = new Celsius(numero);
           elemento.innerHTML = celsius.toFarenheit().toFixed(2) + " Farenheit";
